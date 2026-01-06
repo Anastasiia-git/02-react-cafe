@@ -23,7 +23,8 @@ function App() {
 
   const totalVotes = votes.good + votes.neutral + votes.bad;
 
-  const positiveRate = Math.round((votes.good / totalVotes) * 100);
+  const positiveRate =
+    totalVotes > 0 ? Math.round((votes.good / totalVotes) * 100) : 0;
 
   return (
     <div className={css.app}>
